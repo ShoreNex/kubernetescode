@@ -13,5 +13,12 @@ jobs:
     - name: discord-webhook
       uses: johnnyhuy/actions-discord-git-webhook@v1.0.1
       with:
-        webhook_url: ${{ secrets.DISCORD_WEBHOOK }}  # Correct input key
-        message: '**🚀 New Commit Alert in `${{ github.repository }}`!**\n\n✨ A fresh commit has just been pushed! 🎉\n\n**🔍 Commit Details:**\n> **Message:** "${{ github.event.head_commit.message }}"  \n> **Author:** `${{ github.event.head_commit.author.name }}`  \n> **Date:** `${{ github.event.head_commit.timestamp }} `\n\nStay tuned for more updates! 👀'
+        webhook_url: ${{ secrets.DISCORD_WEBHOOK }}  # addes new secret key 
+        args: |
+          --message '**🚀 New Commit Alert in `${{ github.repository }}`!**  
+          ✨ A fresh commit has just been pushed! 🎉  
+          **🔍 Commit Details:**  
+          > **Message:** "${{ github.event.head_commit.message }}"  
+          > **Author:** `${{ github.event.head_commit.author.name }}`  
+          > **Date:** `${{ github.event.head_commit.timestamp }}`  
+          Stay tuned for more updates! 👀'
