@@ -3,4 +3,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'checking the discord notifier'
+    return 'checking the discord notifier new message style'
